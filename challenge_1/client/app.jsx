@@ -18,7 +18,6 @@ class App extends React.Component {
   }
 
   searchClick(query, pageNum = 0) {
-    console.log('CLIENT QUERY: ', query);
     this.setState({
       search: query
     });
@@ -31,7 +30,6 @@ class App extends React.Component {
   }
 
   handlePageClick(e) {
-    console.log('click: ', e.selected);
     this.searchClick(this.state.search, e.selected + 1);
   }
 
