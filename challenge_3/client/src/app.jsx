@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import Scoreboard from './components/Scoreboard.jsx';
+import Keypad from './components/Keypad.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +15,10 @@ class App extends React.Component {
     return(
       <div>
         <h1>Bowling</h1>
+        <div className='info'>
+          <Keypad />
+          <Scoreboard />
+        </div>
       </div>
     )
   }
