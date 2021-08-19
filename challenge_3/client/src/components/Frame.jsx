@@ -1,20 +1,7 @@
 import React from 'react';
 
-class Frame extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      frameScore: 0
-    }
-  }
-
-  render() {
-    return (
-      <div>
-
-      </div>
-    )
-  }
-}
+const Frame = (props) => (
+  <td colspan='2'>{props.scores}</td>
+)
 
 export default Frame;

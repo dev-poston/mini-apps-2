@@ -6,38 +6,52 @@ class Keypad extends React.Component {
     this.state = {
       numPins: 0
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(e) {
+    console.log(Number(e.target.innerText));
+    this.setState({
+      numPins: Number(e.target.innerText)
+    })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.roll(this.state.numPins);
   }
 
   render() {
     return (
-      <div>
+      <div className='keypad'>
+        <h3>Number of Pins</h3>
         <table>
-          <thead>
-            <tr>
-              <th width='90%'>Number of Pins</th>
-            </tr>
-          </thead>
           <tbody>
             <tr>
-              <td width='33%'>1</td>
-              <td width='33%'>2</td>
-              <td width='33%'>3</td>
+              <td onClick={this.handleChange}>1</td>
+              <td onClick={this.handleChange}>2</td>
+              <td onClick={this.handleChange}>3</td>
             </tr>
             <tr>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
+              <td onClick={this.handleChange}>4</td>
+              <td onClick={this.handleChange}>5</td>
+              <td onClick={this.handleChange}>6</td>
             </tr>
             <tr>
-              <td>7</td>
-              <td>8</td>
-              <td>9</td>
+              <td onClick={this.handleChange}>7</td>
+              <td onClick={this.handleChange}>8</td>
+              <td onClick={this.handleChange}>9</td>
             </tr>
             <tr>
-              <td>10</td>
+              <td onClick={this.handleChange}>10</td>
             </tr>
           </tbody>
         </table>
+        <input value={this.state.numPins}></input>
+        <br/>
+        <br/>
+        <button onClick={this.handleSubmit}>Roll the Ball</button>
       </div>
     )
   }
